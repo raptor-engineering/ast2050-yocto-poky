@@ -1,0 +1,20 @@
+# ===============================================================================================
+# System requirements
+# ===============================================================================================
+Debian Stretch
+gcc5 (gcc6 doesn't work at this time)
+
+# ===============================================================================================
+# Workarounds
+# ===============================================================================================
+ * Restore /etc/perl/find.pl per http://blog.kempj.co.uk/2015/09/missing-find-pl-compiling-oe/
+ * Copy the provided local-aspeed.conf file into build/conf/local.conf after bitbake fails, then
+   retry bitbake
+
+# ===============================================================================================
+# General build procedure
+# ===============================================================================================
+export TEMPLATECONF=meta-openbmc/meta-raptor/meta-asus/conf
+source oe-init-build-env
+cp -Rp ../local-aspeed.conf conf/local.conf
+bitbake asus-image

@@ -4,6 +4,7 @@ SRC_URI = " \
     http://www.yoctoproject.org/downloads/${BPN}/${BPN}-${PV}.tar.bz2 \
     file://fallback-passwd \
     file://fallback-group \
+    file://pseudo-glibc-rtld-next-workaround.patch \
 "
 
 SRC_URI[md5sum] = "2fb800c90d643bfce55e1ce5ca67f3b3"
