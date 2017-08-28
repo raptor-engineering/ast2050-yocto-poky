@@ -34,6 +34,7 @@ ARCH_FLAGS_FOR_TARGET += "-isystem${STAGING_DIR_TARGET}${target_includedir}"
 
 do_compile () {
 	export CC="${BUILD_CC}"
+	export TARGET_CXXFLAGS="${TARGET_CXXFLAGS} -Wno-literal-suffix"
 	export AR_FOR_TARGET="${TARGET_SYS}-ar"
 	export RANLIB_FOR_TARGET="${TARGET_SYS}-ranlib"
 	export LD_FOR_TARGET="${TARGET_SYS}-ld"

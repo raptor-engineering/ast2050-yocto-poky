@@ -6,6 +6,9 @@ DEPENDS += "dtc-native"
 # We use the revision in order to avoid having to fetch it from the repo during parse
 SRCREV = "92fa7f53f1f3f03296f8ffb14bdf1baefab83368"
 
+SRC_URI += "file://fix-build-error-under-gcc6.patch \
+"
+
 PV = "v2015.01+git${SRCPV}"
 
 EXTRA_OEMAKE_append = " KCFLAGS=-fgnu89-inline"

@@ -16,6 +16,9 @@ SRC_URI = "git://git.denx.de/u-boot.git;branch=master \
            file://gcc5.patch \
 	   "
 
+SRC_URI += "file://fix-build-error-under-gcc6.patch \
+"
+
 S = "${WORKDIR}/git"
 
 EXTRA_OEMAKE = 'CROSS_COMPILE="${TARGET_PREFIX}" CC="${CC} ${CFLAGS} ${LDFLAGS}" STRIP=true V=1'
